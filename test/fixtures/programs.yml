@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member: MyString
+  library: one
+  source_file: one
+  code: one
+  is_sftp: false
+  is_ready: false
+  transfers: 1
+
+two:
+  member: MyString
+  library: two
+  source_file: two
+  code: two
+  is_sftp: false
+  is_ready: false
+  transfers: 1

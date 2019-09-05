@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @code.code %>
+</p>
+
+<p>
+  <strong>Operation:</strong>
+  <%= @code.operation %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @code.description %>
+</p>
+
+<p>
+  <strong>Input:</strong>
+  <%= @code.input %>
+</p>
+
+<p>
+  <strong>Output:</strong>
+  <%= @code.output %>
+</p>
+
+<p>
+  <strong>Home dir:</strong>
+  <%= @code.home_dir %>
+</p>
+
+<p>
+  <strong>Daily:</strong>
+  <%= @code.daily %>
+</p>
+
+<%= link_to 'Edit', edit_code_path(@code) %> |
+<%= link_to 'Back', codes_path %>

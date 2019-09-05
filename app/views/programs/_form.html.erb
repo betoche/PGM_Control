@@ -1,0 +1,52 @@
+<%= form_with(model: program, local: true) do |form| %>
+  <% if program.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(program.errors.count, "error") %> prohibited this program from being saved:</h2>
+
+      <ul>
+        <% program.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :member %>
+    <%= form.text_field :member %>
+  </div>
+
+  <div class="field">
+    <%= form.label :library_id %>
+    <%= form.text_field :library_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source_file_id %>
+    <%= form.text_field :source_file_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :code_id %>
+    <%= form.text_field :code_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_sftp %>
+    <%= form.check_box :is_sftp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_ready %>
+    <%= form.check_box :is_ready %>
+  </div>
+
+  <div class="field">
+    <%= form.label :transfers %>
+    <%= form.number_field :transfers %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

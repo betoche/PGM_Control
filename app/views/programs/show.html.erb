@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @program.member %>
+</p>
+
+<p>
+  <strong>Library:</strong>
+  <%= @program.library_id %>
+</p>
+
+<p>
+  <strong>Source file:</strong>
+  <%= @program.source_file_id %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @program.code_id %>
+</p>
+
+<p>
+  <strong>Is sftp:</strong>
+  <%= @program.is_sftp %>
+</p>
+
+<p>
+  <strong>Is ready:</strong>
+  <%= @program.is_ready %>
+</p>
+
+<p>
+  <strong>Transfers:</strong>
+  <%= @program.transfers %>
+</p>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>

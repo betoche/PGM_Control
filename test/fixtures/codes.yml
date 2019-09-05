@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  operation: MyString
+  description: MyString
+  input: MyString
+  output: MyString
+  home_dir: MyString
+  daily: false
+
+two:
+  code: MyString
+  operation: MyString
+  description: MyString
+  input: MyString
+  output: MyString
+  home_dir: MyString
+  daily: false
