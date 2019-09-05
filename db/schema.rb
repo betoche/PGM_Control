@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_231016) do
+ActiveRecord::Schema.define(version: 2019_09_05_232522) do
 
   create_table "codes", force: :cascade do |t|
     t.string "code"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_231016) do
     t.string "member"
     t.integer "library_id", null: false
     t.integer "source_file_id", null: false
-    t.integer "code_id", null: false
+    t.integer "code_id"
     t.boolean "is_sftp"
     t.boolean "is_ready"
     t.integer "transfers"
@@ -58,6 +58,13 @@ ActiveRecord::Schema.define(version: 2019_09_05_231016) do
     t.index ["code_id"], name: "index_programs_on_code_id"
     t.index ["library_id"], name: "index_programs_on_library_id"
     t.index ["source_file_id"], name: "index_programs_on_source_file_id"
+  end
+
+  create_table "related_programs", force: :cascade do |t|
+    t.integer "parent_id"
+    t.integer "child_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "source_files", force: :cascade do |t|

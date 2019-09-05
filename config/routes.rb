@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :related_programs
   resources :programs
   resources :codes
   resources :source_files
