@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Program Relationships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parent</th>
+      <th>Child</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @program_relationships.each do |program_relationship| %>
+      <tr>
+        <td><%= program_relationship.parent_id %></td>
+        <td><%= program_relationship.child_id %></td>
+        <td><%= link_to 'Show', program_relationship %></td>
+        <td><%= link_to 'Edit', edit_program_relationship_path(program_relationship) %></td>
+        <td><%= link_to 'Destroy', program_relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Program Relationship', new_program_relationship_path %>

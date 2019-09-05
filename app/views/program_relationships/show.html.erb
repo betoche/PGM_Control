@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @program_relationship.parent_id %>
+</p>
+
+<p>
+  <strong>Child:</strong>
+  <%= @program_relationship.child_id %>
+</p>
+
+<%= link_to 'Edit', edit_program_relationship_path(@program_relationship) %> |
+<%= link_to 'Back', program_relationships_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: program_relationship, local: true) do |form| %>
+  <% if program_relationship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(program_relationship.errors.count, "error") %> prohibited this program_relationship from being saved:</h2>
+
+      <ul>
+        <% program_relationship.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :parent_id %>
+    <%= form.text_field :parent_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :child_id %>
+    <%= form.text_field :child_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
