@@ -17,6 +17,6 @@ module PGMControl
     # the framework and any gems in your application.
 
     config.action_controller.forgery_protection_origin_check = false
-    config.action_controller.default_url_options = { host: '3000-bceb5195-a868-40bd-bad6-d525f77b7ac7.ws-us1.gitpod.io' }
+    config.action_controller.default_url_options = { host: 'https://3000-fcc0884c-27c5-452c-944b-614c50450846.ws-us1.gitpod.io' }
   end
 end
