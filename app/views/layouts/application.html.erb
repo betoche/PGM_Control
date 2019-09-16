@@ -21,7 +21,11 @@
             <div id="content">
 
                 <%=render "layouts/topbar" %>
-                <%= yield %>
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <%= yield %>
+                </div>
+                <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
 
