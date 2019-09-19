@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :systems
   get 'dashboard/index'
   resources :related_programs
   resources :programs
