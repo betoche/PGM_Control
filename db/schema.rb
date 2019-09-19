@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_220718) do
+ActiveRecord::Schema.define(version: 2019_09_19_221407) do
 
   create_table "codes", force: :cascade do |t|
     t.string "code"
@@ -22,12 +22,16 @@ ActiveRecord::Schema.define(version: 2019_09_19_220718) do
     t.boolean "daily"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "system_id", default: 0, null: false
+    t.index ["system_id"], name: "index_codes_on_system_id"
   end
 
   create_table "libraries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "system_id", default: 0, null: false
+    t.index ["system_id"], name: "index_libraries_on_system_id"
   end
 
   create_table "program_dummies", force: :cascade do |t|
@@ -90,6 +94,8 @@ ActiveRecord::Schema.define(version: 2019_09_19_220718) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "codes", "systems"
+  add_foreign_key "libraries", "systems"
   add_foreign_key "program_relationships", "program_dummies", column: "child_id"
   add_foreign_key "program_relationships", "program_dummies", column: "parent_id"
   add_foreign_key "programs", "codes"

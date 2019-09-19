@@ -1,5 +1,16 @@
 <%= form_with(model: system, local: true) do |form| %>
-  <% if system.errors.any? %>
+    <div id="error-messages" class="alert alert-danger" role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <b class="alert-heading"><%= pluralize(system.errors.count, "error") %> prohibited this system from being saved</b>
+      <hr>
+      <p class="mb-0">
+        <% system.errors.full_messages.each do |message| %>
+          <%= message %><br/>
+        <% end %>
+      </p>
+    </div>
+
+    <% if false %>
     <div id="error_explanation">
       <h2><%= pluralize(system.errors.count, "error") %> prohibited this system from being saved:</h2>
 
@@ -9,8 +20,29 @@
         <% end %>
       </ul>
     </div>
+    <% end %>
   <% end %>
 
+  <%= content_tag(:div, class: "form-group row") do
+    form.label( :name, class: "col-md-4 col-form-label" ) +
+    form.text_field( :name, class: "form-control mb-4 col-md-8", placeholder: "name" )
+  end %>
+
+  <%= content_tag(:div, class: "form-group row") do
+    form.label( :description, class: "col-md-4 col-form-label" ) +
+    form.text_field( :description, class: "form-control mb-4 col-md-8", placeholder: "description" )
+  end %>
+
+  <%= content_tag(:div, class: "form-group row") do
+    form.label( :ip, class: "col-md-4 col-form-label" ) +
+    form.text_field( :ip, class: "form-control mb-4 col-md-8", placeholder: "ip" )
+  end %>
+
+  <hr/>
+  <!-- Send button -->
+  <%= form.submit "Send", class: "btn btn-info btn-block" %>
+
+<% if false %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -29,4 +61,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
 <% end %>
