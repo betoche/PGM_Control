@@ -1,5 +1,18 @@
+            <!-- Page Heading -->
+            <div class="card shadow col-lg-3 offset-lg-4 p-5">
+              <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h4 mb-4 text-gray-800">Libreria Nueva</h1>
+              </div>
+
+              <%= render 'form', library: @library %>
+            </div>
+
+
+<% if false %>
 <h1>New Library</h1>
 
 <%= render 'form', library: @library %>
 
 <%= link_to 'Back', libraries_path %>
+
+<% end %>
