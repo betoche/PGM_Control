@@ -8,6 +8,8 @@ class Program < ApplicationRecord
   has_many :child_programs, class_name: 'RelatedProgram', foreign_key: :parent_id
   has_many :children, through: :child_programs, source: :child
 
+  validates :member, :library_id, :source_file_id, presence: true, allow_blank: false
+
   def name
     "#{self.member}"
   end
