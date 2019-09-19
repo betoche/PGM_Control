@@ -1,6 +1,17 @@
+<!-- Page Heading -->
+<div class="card shadow col-lg-3 offset-lg-4 p-5">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h4 mb-4 text-gray-800">Editar Archivo de Fuentes</h1>
+  </div>
+
+  <%= render 'form', source_file: @source_file %>
+</div>
+
+<% if false %>
 <h1>Editing Source File</h1>
 
 <%= render 'form', source_file: @source_file %>
 
 <%= link_to 'Show', @source_file %> |
 <%= link_to 'Back', source_files_path %>
+<% end %>

@@ -56,7 +56,7 @@
 <%
                 @models.each do |modelName|
                     puts modelName
-                    unless ["program_dummy", "program_relationship"].include?(modelName)
+                    unless ["program_dummy", "program_relationship", "related_program"].include?(modelName)
                         begin
 %>
               <%= link_to( modelName.humanize.capitalize, [:new, modelName.downcase], class: 'collapse-item') %>

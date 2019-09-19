@@ -1,10 +1,12 @@
 <%= form_with(model: library, local: true) do |form| %>
   <% if library.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <h4 class="alert-heading"><%= pluralize(library.errors.count, "error") %> prohibited this library from being saved:</h4>
+    <div id="error-messages" class="alert alert-danger" role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <b class="alert-heading"><%= pluralize(library.errors.count, "error") %> prohibited this library from being saved </b>
       <hr>
       <p class="mb-0">
         <% library.errors.full_messages.each do |message| %>
+          <i class="fas fa-exclamation-circle"></i>
           <%= message %><br/>
         <% end %>
       </p>
@@ -28,6 +30,12 @@
     form.text_field( :name, class: "form-control mb-4 col-md-8", placeholder: "library name" )
   end %>
 
+  <%= content_tag(:div, class: "form-group row") do
+    form.label( :system_id, class: "col-md-4 col-form-label" ) +
+    form.collection_select( :system_id, System.all, :id, :name, {}, :class => "browser-default custom-select col-md-8" )
+  end %>
+
+   <hr/>
   <!-- Send button -->
   <%= form.submit "Send", class: "btn btn-info btn-block" %>
 

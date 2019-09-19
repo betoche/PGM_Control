@@ -1,6 +1,17 @@
+<!-- Page Heading -->
+<div class="card shadow col-lg-3 offset-lg-4 p-5">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h4 mb-4 text-gray-800">Editar AS400</h1>
+  </div>
+
+  <%= render 'form', system: @system %>
+</div>
+
+<% if false %>
 <h1>Editing System</h1>
 
 <%= render 'form', system: @system %>
 
 <%= link_to 'Show', @system %> |
 <%= link_to 'Back', systems_path %>
+<% end %>
