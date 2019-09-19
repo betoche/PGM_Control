@@ -1,7 +1,8 @@
 <%= form_with(model: code, local: true ) do |form| %>
   <% if code.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <h4 class="alert-heading"><%= pluralize(code.errors.count, "error") %> prohibited this code from being saved:</h4>
+    <div id="error-messages" class="alert alert-danger" role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <b class="alert-heading"><%= pluralize(code.errors.count, "error") %> prohibited this code from being saved</b>
       <hr>
       <p class="mb-0">
         <% code.errors.full_messages.each do |message| %>
@@ -57,7 +58,7 @@
     form.check_box( :daily, class: "custom-control-input" ) +
     form.label( :daily, class: "custom-control-label" )
   end %>
-
+  <hr/>
   <!-- Send button -->
   <%= form.submit "Send", class: "btn btn-info btn-block" %>
 
