@@ -1,4 +1,5 @@
 <%= form_with(model: system, local: true) do |form| %>
+  <% if system.errors.any? %>
     <div id="error-messages" class="alert alert-danger" role="alert">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       <b class="alert-heading"><%= pluralize(system.errors.count, "error") %> prohibited this system from being saved</b>
@@ -42,7 +43,7 @@
   <!-- Send button -->
   <%= form.submit "Send", class: "btn btn-info btn-block" %>
 
-<% if false %>
+  <% if false %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -61,5 +62,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
-<% end %>
+  <% end %>
 <% end %>
