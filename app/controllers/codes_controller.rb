@@ -24,6 +24,8 @@ class CodesController < ApplicationController
   # POST /codes
   # POST /codes.json
   def create
+    puts("code_params: " + code_params.to_s)
+
     @code = Code.new(code_params)
 
     respond_to do |format|
@@ -69,6 +71,6 @@ class CodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def code_params
-      params.require(:code).permit(:code, :operation, :description, :input, :output, :home_dir, :daily)
+      params.require(:code).permit(:code, :system_id, :operation, :description, :input, :output, :home_dir, :daily)
     end
 end

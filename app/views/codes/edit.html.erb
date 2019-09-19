@@ -1,6 +1,17 @@
+<!-- Page Heading -->
+<div class="card shadow col-lg-3 offset-lg-4 p-5">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h4 mb-4 text-gray-800">Editar Codigo</h1>
+    </div>
+
+    <%= render 'form', code: @code %>
+</div>
+
+<% if false %>
 <h1>Editing Code</h1>
 
 <%= render 'form', code: @code %>
 
 <%= link_to 'Show', @code %> |
 <%= link_to 'Back', codes_path %>
+<% end %>
