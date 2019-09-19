@@ -1,10 +1,12 @@
 <%= form_with(model: source_file, local: true) do |form| %>
   <% if source_file.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <h4 class="alert-heading"><%= pluralize(source_file.errors.count, "error") %> prohibited this Source File from being saved:</h4>
+    <div id="error-messages" class="alert alert-danger" role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <b class="alert-heading"><%= pluralize(source_file.errors.count, "error") %> prohibited this Source File from being saved</b>
       <hr>
       <p class="mb-0">
         <% source_file.errors.full_messages.each do |message| %>
+          <i class="fas fa-exclamation-circle"></i>
           <%= message %><br/>
         <% end %>
       </p>
