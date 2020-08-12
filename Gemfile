@@ -38,7 +38,7 @@ gem 'typescript-rails', '~> 0.6.2.4'
 
 gem 'font-awesome-sass', '~> 4.4.0'
 
-gem 'chartkick', '~> 3.2', '>= 3.2.1'
+gem 'chartkick', '~> 3.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
